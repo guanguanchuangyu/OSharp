@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 //  <copyright file="AbstractBuilder.cs" company="OSharp开源团队">
 //      Copyright (c) 2014 OSharp. All rights reserved.
 //  </copyright>
@@ -48,11 +48,11 @@ namespace OSharp.Extensions
             }
             if (conversionType.IsEnum)
             {
-                return Enum.Parse(conversionType, value.ToString());
+                return Enum.Parse(conversionType, value.ToString()!);
             }
             if (conversionType == typeof(Guid))
             {
-                return Guid.Parse(value.ToString());
+                return Guid.Parse(value.ToString()!);
             }
             return Convert.ChangeType(value, conversionType);
         }

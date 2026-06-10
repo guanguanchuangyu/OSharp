@@ -163,7 +163,7 @@ namespace OSharp.Extensions
                 startIndex = source.IndexOf(startString, StringComparison.OrdinalIgnoreCase);
                 if (startIndex < 0)
                 {
-                    throw new InvalidOperationException(string.Format("在源字符串中无法找到“{0}”的子串位置", startString));
+                    return string.Empty;
                 }
                 startIndex = startIndex + startString.Length;
             }
@@ -185,7 +185,7 @@ namespace OSharp.Extensions
             }
             if (endIndex < 0 || endIndex < startIndex)
             {
-                throw new InvalidOperationException(string.Format("在源字符串中无法找到“{0}”的子串位置", endStrings.ExpandAndToString()));
+                return string.Empty;
             }
 
             int length = endIndex - startIndex;
@@ -210,7 +210,7 @@ namespace OSharp.Extensions
                 return string.Empty;
             }
             string inner = containsEmpty ? "\\s\\S" : "\\S";
-            string result = source.Match(string.Format("(?<={0})([{1}]+?)(?={2})", startString, inner, endString));
+            string result = source.Match($"(?<={startString})([{inner}]+?)(?={endString})");
             return result.IsMissing() ? null : result;
         }
 
@@ -293,7 +293,7 @@ namespace OSharp.Extensions
                     return false;
                 }
                 array = regex.Split(value);
-                return DateTime.TryParse(string.Format("{0}-{1}-{2}", "19" + array[2], array[3], array[4]), out time);
+                return DateTime.TryParse($"{"19" + array[2]}-{array[3]}-{array[4]}", out time);
             }
             regex = new Regex(@"^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9Xx])$");
             if (!regex.Match(value).Success)
@@ -301,7 +301,7 @@ namespace OSharp.Extensions
                 return false;
             }
             array = regex.Split(value);
-            if (!DateTime.TryParse(string.Format("{0}-{1}-{2}", array[2], array[3], array[4]), out time))
+            if (!DateTime.TryParse($"{array[2]}-{array[3]}-{array[4]}", out time))
             {
                 return false;
             }
@@ -817,7 +817,7 @@ namespace OSharp.Extensions
         public static string ToUnicodeString(this string source)
         {
             Regex regex = new Regex(@"[^\u0000-\u00ff]");
-            return regex.Replace(source, m => string.Format(@"\u{0:x4}", (short)m.Value[0]));
+            return regex.Replace(source, m => $@"\u{(short)m.Value[0]:x4}");
         }
 
         /// <summary>

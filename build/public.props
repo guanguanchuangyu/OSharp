@@ -29,4 +29,14 @@
   <ItemGroup>
     <None Include="..\..\build\icon.png" Pack="true" Visible="false" PackagePath=""/>
   </ItemGroup>
+
+  <!-- .NET 9 版本 -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0'">
+    <ExtensionsVersion>9.*</ExtensionsVersion>
+  </PropertyGroup>
+
+  <!-- .NET 10 版本 -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <ExtensionsVersion>10.*</ExtensionsVersion>
+  </PropertyGroup>
 </Project>

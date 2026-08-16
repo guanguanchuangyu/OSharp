@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2Cy.Core", "src\G2Cy.Core\G2Cy.Core.csproj", "{33AB7B0A-104F-4D0A-9812-4A551ED16DA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2Cy.EntityConfiguration", "src\G2Cy.EntityConfiguration\G2Cy.EntityConfiguration.csproj", "{A2075E0F-A564-4F1E-BBFA-4422FBF885A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2Cy.WebApi", "src\G2Cy.WebApi\G2Cy.WebApi.csproj", "{84F1687A-FC62-40CB-B545-6A5E64854022}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33AB7B0A-104F-4D0A-9812-4A551ED16DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33AB7B0A-104F-4D0A-9812-4A551ED16DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33AB7B0A-104F-4D0A-9812-4A551ED16DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33AB7B0A-104F-4D0A-9812-4A551ED16DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2075E0F-A564-4F1E-BBFA-4422FBF885A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2075E0F-A564-4F1E-BBFA-4422FBF885A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2075E0F-A564-4F1E-BBFA-4422FBF885A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2075E0F-A564-4F1E-BBFA-4422FBF885A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84F1687A-FC62-40CB-B545-6A5E64854022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F1687A-FC62-40CB-B545-6A5E64854022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F1687A-FC62-40CB-B545-6A5E64854022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F1687A-FC62-40CB-B545-6A5E64854022}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

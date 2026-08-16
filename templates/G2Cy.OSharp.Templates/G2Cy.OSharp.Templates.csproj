@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <PackageId>G2Cy.OSharp.Templates</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Title>G2Cy OSharp Templates</Title>
+    <Authors>G2Cy</Authors>
+    <Description>Layered OSharp Web API solution templates for dotnet new.</Description>
+    <PackageTags>dotnet-new;templates;osharp;webapi</PackageTags>
+    <PackageType>Template</PackageType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="content\**\*"
+             Exclude="content\**\bin\**;content\**\obj\**"
+             Pack="true"
+             PackagePath="content" />
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+</Project>

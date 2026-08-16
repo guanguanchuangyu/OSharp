@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>G2Cy.OSharp.Templates</id>
+    <version>1.0.0</version>
+    <title>G2Cy OSharp Templates</title>
+    <authors>G2Cy</authors>
+    <description>Layered .NET 10 OSharp Web API solution templates for dotnet new.</description>
+    <tags>dotnet-new templates osharp webapi</tags>
+    <readme>README.md</readme>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src="content\**\*" target="content" exclude="content\**\bin\**;content\**\obj\**" />
+    <file src="README.md" target="" />
+  </files>
+</package>

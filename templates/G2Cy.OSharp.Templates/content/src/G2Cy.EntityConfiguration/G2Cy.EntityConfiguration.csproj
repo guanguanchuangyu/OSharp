@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>G2Cy.EntityConfiguration</AssemblyName>
+    <RootNamespace>G2Cy.EntityConfiguration</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OSharp.EntityFrameworkCore" Version="$(OSharpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\G2Cy.Core\G2Cy.Core.csproj" />
+  </ItemGroup>
+
+</Project>

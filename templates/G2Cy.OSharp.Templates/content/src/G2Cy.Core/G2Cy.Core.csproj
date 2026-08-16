@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>G2Cy.Core</AssemblyName>
+    <RootNamespace>G2Cy</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OSharp.Authorization.Datas" Version="$(OSharpVersion)" />
+    <PackageReference Include="OSharp.Authorization.Functions" Version="$(OSharpVersion)" />
+    <PackageReference Include="OSharp.AutoMapper" Version="$(OSharpVersion)" />
+  </ItemGroup>
+
+</Project>

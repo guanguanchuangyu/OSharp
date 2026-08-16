@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "G2Cy",
+  "classifications": [ "Web", "Web API", "OSharp" ],
+  "name": "G2Cy OSharp Web API",
+  "description": "Creates a layered OSharp Web API solution with a selectable database provider.",
+  "identity": "G2Cy.OSharp.WebApi",
+  "groupIdentity": "G2Cy.OSharp",
+  "shortName": "g2cy-api",
+  "sourceName": "G2Cy",
+  "defaultName": "G2Cy.Application",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "symbols": {
+    "dbtype": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "mysql",
+          "description": "MySQL database"
+        },
+        {
+          "choice": "mssql",
+          "description": "SQL Server database"
+        },
+        {
+          "choice": "sqlite",
+          "description": "SQLite database"
+        },
+        {
+          "choice": "pgsql",
+          "description": "PostgreSQL database"
+        },
+        {
+          "choice": "oracle",
+          "description": "Oracle database"
+        }
+      ],
+      "defaultValue": "mysql",
+      "description": "Database provider used by the generated project"
+    },
+    "mysql": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(dbtype == \"mysql\")"
+    },
+    "mssql": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(dbtype == \"mssql\")"
+    },
+    "sqlite": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(dbtype == \"sqlite\")"
+    },
+    "pgsql": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(dbtype == \"pgsql\")"
+    },
+    "oracle": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(dbtype == \"oracle\")"
+    }
+  },
+  "sources": [
+    {
+      "exclude": [
+        ".template.config/**",
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**"
+      ],
+      "modifiers": [
+        {
+          "condition": "(!mysql)",
+          "exclude": [ "src/G2Cy.WebApi/Startups/MySqlDefaultDbContextMigrationPack.cs" ]
+        },
+        {
+          "condition": "(!mssql)",
+          "exclude": [ "src/G2Cy.WebApi/Startups/SqlServerDefaultDbContextMigrationPack.cs" ]
+        },
+        {
+          "condition": "(!sqlite)",
+          "exclude": [ "src/G2Cy.WebApi/Startups/SqliteDefaultDbContextMigrationPack.cs" ]
+        },
+        {
+          "condition": "(!pgsql)",
+          "exclude": [ "src/G2Cy.WebApi/Startups/NpgsqlDefaultDbContextMigrationPack.cs" ]
+        },
+        {
+          "condition": "(!oracle)",
+          "exclude": [ "src/G2Cy.WebApi/Startups/OracleDefaultDbContextMigrationPack.cs" ]
+        }
+      ]
+    }
+  ],
+  "primaryOutputs": [
+    {
+      "path": "G2Cy.sln"
+    }
+  ]
+}

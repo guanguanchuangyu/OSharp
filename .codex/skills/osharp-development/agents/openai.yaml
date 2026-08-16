@@ -1,0 +1,4 @@
+interface:
+  display_name: "OSharp Development"
+  short_description: "Build NuGet-based OSharp applications"
+  default_prompt: "Use $osharp-development to create or extend a layered OSharp application with official NuGet packages."
